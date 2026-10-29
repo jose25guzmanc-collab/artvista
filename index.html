@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ART VISTA · Galería de pinturas</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14100d;--card:#1f1913;--ink:#f3ebdd;--mute:#a99d8e;--acc:#e0785f;--line:#3a3028;--gold:#d4aa5c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#17130f;--card:#221c17;--ink:#f1e9dc;--mute:#a79b8d;--acc:#e0785f;--line:#3a3028;--gold:#d4aa5c}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#3a2414 0%,transparent 60%),var(--bg);background-attachment:fixed;color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 20px}
+.logo{font:600 26px 'Cormorant Garamond',Georgia,serif;letter-spacing:.14em;color:var(--ink);text-decoration:none}.logo b{color:var(--acc)}
+nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+nav a{color:var(--mute);text-decoration:none;padding:6px 12px;border-radius:99px;font-size:14px;transition:.2s}nav a:hover,nav a.on{background:var(--ink);color:var(--bg)}
+main{max-width:1200px;margin:0 auto;padding:24px 20px 60px;animation:in .5s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;margin:0 0 8px}h1{font-size:clamp(34px,6vw,56px);line-height:1.1}
+.hero p{color:var(--mute);max-width:560px}
+input,select,textarea,button{font:inherit;color:var(--ink)}
+input,select,textarea{width:100%;padding:10px 14px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+textarea{min-height:90px}label{display:block;font-size:13px;color:var(--mute);margin:12px 0 4px}
+.btn{background:var(--ink);color:var(--bg);border:0;padding:10px 18px;border-radius:99px;cursor:pointer;font-weight:500;transition:.2s;text-decoration:none;display:inline-block}.btn:hover{transform:translateY(-2px);opacity:.9}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.ok{background:#2f7a4d;color:#fff}.btn.no{background:var(--acc);color:#fff}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 22px}.chip{border:1px solid var(--line);background:var(--card);padding:6px 14px;border-radius:99px;cursor:pointer;font-size:14px;transition:.2s}.chip.on,.chip:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+.grid{columns:1;column-gap:18px}@media(min-width:560px){.grid{columns:2}}@media(min-width:900px){.grid{columns:3}}@media(min-width:1150px){.grid{columns:4}}
+.card{break-inside:avoid;margin-bottom:18px;background:var(--card);border-radius:14px;overflow:hidden;cursor:pointer;border:1px solid var(--line);transition:.3s;display:block;text-decoration:none;color:inherit}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.18)}.card .t{padding:12px 14px}.card h3{font-size:20px;margin:0}.card small{color:var(--mute)}
+.img{width:100%;display:block;background-size:cover;background-position:center;position:relative;overflow:hidden}img.img{height:auto}
+.img i{position:absolute;left:8px;bottom:8px;font:11px Inter;background:rgba(0,0,0,.55);color:#fff;padding:2px 8px;border-radius:99px;font-style:normal}
+.det{display:grid;gap:28px}@media(min-width:850px){.det{grid-template-columns:1fr 1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:14px}.box h3{font-size:22px;color:var(--acc)}
+.tag{display:inline-block;background:var(--line);padding:2px 10px;border-radius:99px;font-size:12px;margin:0 6px 6px 0}
+.st{padding:2px 10px;border-radius:99px;font-size:12px;color:#fff}.s-pendiente{background:#b48a3c}.s-correcciones{background:#c0602a}.s-aprobada{background:#2f7a4d}.s-rechazada{background:#8a3030}
+.warn{background:#b48a3c22;border:1px solid var(--gold);padding:10px 14px;border-radius:10px;font-size:14px;margin:12px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.mini{display:grid;grid-template-columns:70px 1fr;gap:12px}
+header{backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 82%,transparent)}
+.hero2{position:relative;text-align:center;padding:56px 12px 36px;margin-bottom:10px;overflow:hidden}
+.hero2 h1{font-size:clamp(44px,9vw,96px);line-height:1;background:linear-gradient(90deg,var(--gold),#fff3d0,var(--acc),var(--gold));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 8s linear infinite}
+@keyframes sh{to{background-position:300% 0}}
+.hero2 p{color:var(--mute);max-width:560px;margin:14px auto 22px;font-size:18px}
+.kick{letter-spacing:.35em;font-size:12px;color:var(--gold);text-transform:uppercase}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.35;z-index:-1;animation:fl 9s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translate(40px,30px)}}
+.stats{display:flex;gap:28px;justify-content:center;margin-top:26px;color:var(--mute);font-size:13px}.stats b{display:block;font:600 34px 'Cormorant Garamond',serif;color:var(--ink)}
+.card{padding:8px;background:linear-gradient(145deg,#d4aa5c40,var(--card));border-color:#d4aa5c55}
+.ph{position:relative;overflow:hidden;border-radius:8px}.ph .img{transition:transform .6s}.card:hover .ph .img{transform:scale(1.08)}
+.ov{position:absolute;inset:auto 0 0 0;padding:34px 12px 10px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff;font-size:14px;opacity:0;transform:translateY(10px);transition:.3s}.card:hover .ov{opacity:1;transform:none}
+.det .img{border-radius:10px;box-shadow:0 24px 60px rgba(0,0,0,.55);border:6px solid #2b2218;outline:2px solid var(--gold)}
+footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 20px}
+</style>
+</head>
+<body>
+<header><a class="logo" href="#galeria">ART<b>VISTA</b></a>
+<nav id="nav"><a href="#galeria" data-r="galeria">Galería</a><a href="#proponer" data-r="proponer">Proponer obra</a><a href="#estado" data-r="estado">Mi propuesta</a><a href="#admin" data-r="admin">Administrador</a></nav></header>
+<main id="app"></main>
+<footer>ART VISTA · Galería escolar de pinturas</footer>
+<script>
+const U='https://peowgvqyuwkbzrqssocq.supabase.co',K='sb_publishable_C5HB9hOyGucwylpJkn2eCA_9wSy0bHA';
+const S={pendiente:'Pendiente de revisión',correcciones:'Necesita correcciones',aprobada:'Aprobada y publicada',rechazada:'Rechazada'};
+const D=[
+{id:'noche',t:'La noche estrellada',a:'Vincent van Gogh',y:'1889',tec:'Óleo sobre lienzo',st:'Postimpresionismo',c:['#0f2a5c','#2f6db5','#f2c744'],r:1.25,
+vis:'Un cielo nocturno dominado por remolinos de azul, con una luna creciente y estrellas rodeadas de halos amarillos. Abajo, un pueblo tranquilo y un ciprés oscuro que se eleva como una llama.',
+hist:'Van Gogh la pintó en junio de 1889 en el asilo de Saint-Paul-de-Mausole, en Saint-Rémy-de-Provence, Francia, donde estaba internado voluntariamente. Hoy se conserva en el MoMA de Nueva York. El pueblo no corresponde exactamente a la vista real desde su ventana.',
+int:'Algunas lecturas ven en el cielo agitado el estado emocional del artista; otras destacan la búsqueda de lo espiritual en la naturaleza. Son interpretaciones, no hechos documentados.',emo:'Inquietud, asombro, esperanza y soledad.'},
+{id:'gioconda',t:'La Gioconda (Mona Lisa)',a:'Leonardo da Vinci',y:'c. 1503–1519',tec:'Óleo sobre tabla de álamo',st:'Renacimiento',c:['#3b3a22','#8c7a45','#c9b27a'],r:1.5,
+vis:'Retrato de una mujer sentada, de medio cuerpo, con una leve sonrisa y la mirada hacia el espectador, frente a un paisaje lejano y brumoso.',
+hist:'Se suele identificar a la retratada con Lisa Gherardini, esposa de Francesco del Giocondo, según Giorgio Vasari. Leonardo empleó la técnica del sfumato. La obra se conserva en el Museo del Louvre, París, y fue robada en 1911 y recuperada en 1913.',
+int:'La sonrisa ambigua ha dado lugar a muchas lecturas sobre su significado; ninguna está confirmada.',emo:'Serenidad, misterio y calma.'},
+{id:'memoria',t:'La persistencia de la memoria',a:'Salvador Dalí',y:'1931',tec:'Óleo sobre lienzo',st:'Surrealismo',c:['#6b3d1a','#d9a05b','#4aa3c7'],r:0.8,
+vis:'Relojes blandos que se derriten sobre una rama, una mesa y una forma extraña en un paisaje desierto junto al mar.',
+hist:'Es una obra pequeña, de unos 24 × 33 cm, conservada en el MoMA de Nueva York. Dalí contó que la idea surgió al ver un queso camembert derritiéndose.',
+int:'Suele leerse como una reflexión sobre la fluidez del tiempo y el mundo de los sueños. Es una interpretación posible, no una explicación del autor.',emo:'Extrañeza, inquietud y sensación de tiempo detenido.'},
+{id:'grito',t:'El grito',a:'Edvard Munch',y:'1893',tec:'Temple y crayón sobre cartón',st:'Expresionismo',c:['#c2491d','#e8903a','#1c3a57'],r:1.3,
+vis:'Una figura andrógina con las manos en el rostro sobre un puente, con un cielo ondulante rojo y naranja y un fiordo al fondo.',
+hist:'Munch hizo varias versiones. La de 1893 está en la Galería Nacional de Oslo. En su diario de 1892 describió un paseo al atardecer en el que sintió un grito infinito recorriendo la naturaleza.',
+int:'Muchas lecturas la asocian con la angustia moderna; es una interpretación posterior.',emo:'Angustia, ansiedad y desesperación.'},
+{id:'impresion',t:'Impresión, sol naciente',a:'Claude Monet',y:'1872',tec:'Óleo sobre lienzo',st:'Impresionismo',c:['#6f8ea0','#b9c9cf','#e3672b'],r:0.75,
+vis:'El puerto de Le Havre al amanecer, entre neblina azul y gris, con un sol naranja y barcas difuminadas sobre el agua.',
+hist:'Se expuso en 1874 en la primera exposición del grupo de artistas independientes. La crítica del periodista Louis Leroy usó el título para burlarse, y de ahí viene el nombre «impresionismo». Se conserva en el Museo Marmottan Monet, París.',
+int:'Se interpreta como un intento de captar un instante fugaz de luz más que un lugar exacto.',emo:'Calma, nostalgia y quietud.'},
+{id:'meninas',t:'Las Meninas',a:'Diego Velázquez',y:'1656',tec:'Óleo sobre lienzo',st:'Barroco',c:['#2b2118','#6e5236','#c9a96b'],r:1.2,
+vis:'Una sala del Alcázar de Madrid con la infanta Margarita rodeada de sus damas, un pintor ante un gran lienzo y un espejo al fondo que refleja a dos figuras.',
+hist:'Velázquez era pintor de cámara de Felipe IV. La obra está en el Museo del Prado, Madrid. El espejo refleja a los reyes, y el pintor del cuadro se identifica con Velázquez.',
+int:'Se discute qué muestra el lienzo del fondo y quién es el verdadero «espectador». Las lecturas sobre el juego entre realidad y representación son interpretaciones.',emo:'Misterio, intimidad y curiosidad.'},
+{id:'beso',t:'El beso',a:'Gustav Klimt',y:'1907–1908',tec:'Óleo y pan de oro sobre lienzo',st:'Simbolismo / Secesión vienesa',c:['#7a5a14','#d9ae3f','#f1dc9a'],r:1.0,
+vis:'Una pareja abrazada sobre un prado de flores, envuelta en mantos dorados con motivos geométricos y florales.',
+hist:'Pertenece al llamado «periodo dorado» de Klimt y se conserva en el Belvedere de Viena. La identidad de las figuras no está documentada con certeza.',
+int:'Suele leerse como una celebración del amor y la unión. Es una interpretación posible.',emo:'Ternura, intimidad y calidez.'},
+{id:'perla',t:'La joven de la perla',a:'Johannes Vermeer',y:'c. 1665',tec:'Óleo sobre lienzo',st:'Siglo de Oro neerlandés',c:['#0e0e12','#2c4a6b','#d9c38a'],r:1.35,
+vis:'Una joven que mira por encima del hombro, con turbante azul y amarillo y un gran pendiente de perla, sobre fondo oscuro.',
+hist:'Es un «tronie» (estudio de un tipo o expresión), no un retrato encargado. La modelo no se conoce. Está en el Mauritshuis, La Haya.',
+int:'El interés está en la mirada y en la luz de la perla. Cualquier historia sobre la identidad de la joven es especulación.',emo:'Sorpresa suave, intimidad y misterio.'}
+];
+
+let tok=null,P=[],A=[],code='',edit=null,cur=null,q='',sty='Todos',af='todas';
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const hdr=()=>({apikey:K,...(tok?{Authorization:'Bearer '+tok}:{})});
+async function api(path,o={}){const r=await fetch(U+path,{method:o.method||'GET',headers:{...hdr(),...(o.json?{'Content-Type':'application/json'}:{}),...(o.h||{})},body:o.json?JSON.stringify(o.json):o.body});
+ const t=await r.text();let d=null;try{d=t?JSON.parse(t):null}catch(e){d=t}
+ if(!r.ok){if(r.status===401&&tok)tok=null;throw new Error((d&&(d.message||d.msg||d.error_description||d.error))||'Error '+r.status)}return d}
+const IC={};
+async function blobUrl(p){if(IC[p])return IC[p];try{const r=await fetch(U+'/storage/v1/object/paintings/'+p,{headers:hdr()});if(!r.ok)return null;return IC[p]=URL.createObjectURL(await r.blob())}catch(e){return null}}
+function hydrate(){document.querySelectorAll('img[data-path]').forEach(async i=>{const u=await blobUrl(i.dataset.path);if(u)i.src=u})}
+const map=m=>({id:m.id,t:m.title,a:m.artist,y:m.year,tec:m.technique,st:m.style||'Otros',vis:m.visual_description,hist:m.history,int:m.interpretation,emo:m.emotions,src:m.image_source,path:m.image_path});
+async function loadPub(){try{P=(await api('/rest/v1/public_paintings?select=*')).map(map)}catch(e){P=[]}}
+const pub=()=>[...D,...P];
+const imgOf=p=>p.path?`<img class="img" data-path="${esc(p.path)}" alt="${esc(p.t)}" style="min-height:160px;background:var(--line)">`:`<div class="img" style="aspect-ratio:1/${p.r||1.2};background:radial-gradient(circle at 30% 28%,${p.c[2]},transparent 55%),linear-gradient(160deg,${p.c[0]},${p.c[1]})"><i>Imagen de demostración</i></div>`;
+function route(){const r=location.hash.slice(1)||'galeria';document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',r.startsWith(a.dataset.r)));
+ ({galeria:gal,proponer:form,estado:estado,admin:admin}[r]||(r.startsWith('obra-')?()=>detail(r.slice(5)):gal))();window.scrollTo(0,0)}
+async function gal(){$('#app').innerHTML='<p>Cargando galería…</p>';await loadPub();const st=['Todos',...new Set(pub().map(p=>p.st))];
+ $('#app').innerHTML=`<div class="hero2"><div class="orb" style="width:300px;height:300px;background:var(--acc);left:5%;top:0"></div><div class="orb" style="width:260px;height:260px;background:var(--gold);right:5%;top:40px"></div><div class="kick">Galería digital de pinturas</div><h1>Mira el arte<br>de otra manera</h1><p>Explora cuadros célebres, descubre la historia detrás de cada pincelada y propón tus propias obras.</p><a class="btn" href="#g" onclick="document.getElementById('g').scrollIntoView({behavior:'smooth'});return false">Explorar obras</a> <a class="btn alt" href="#proponer">Proponer una obra</a><div class="stats"><div><b>${pub().length}</b>obras</div><div><b>${st.length-1}</b>estilos</div><div><b>${new Set(pub().map(p=>p.a)).size}</b>artistas</div></div></div>
+ <input id="q" placeholder="Buscar por título o artista…" value="${esc(q)}" oninput="q=this.value;grid()"><div class="chips">${st.map(s=>`<span class="chip ${s===sty?'on':''}" onclick="sty=this.textContent;gal()">${esc(s)}</span>`).join('')}</div><div class="grid" id="g"></div>`;grid()}
+function grid(){const t=q.toLowerCase(),l=pub().filter(p=>(sty==='Todos'||p.st===sty)&&(p.t+' '+p.a).toLowerCase().includes(t));
+ $('#g').innerHTML=l.length?l.map((p,i)=>`<a class="card" style="animation:in .6s both ${i*70}ms" href="#obra-${p.id}"><div class="ph">${imgOf(p)}<div class="ov">Ver historia →</div></div><div class="t"><h3>${esc(p.t)}</h3><small>${esc(p.a)}${p.y?' · '+esc(p.y):''}</small></div></a>`).join(''):'<p>No hay obras con esa búsqueda.</p>';hydrate()}
+async function detail(id){if(!P.length)await loadPub();const p=pub().find(x=>x.id===id);if(!p){$('#app').innerHTML='<p>Obra no encontrada. <a href="#galeria">Volver</a></p>';return}
+ const b=(h,v)=>v?`<div class="box"><h3>${h}</h3>${esc(v)}</div>`:'';
+ $('#app').innerHTML=`<a href="#galeria" class="btn alt">← Volver</a><div class="det" style="margin-top:18px"><div>${imgOf(p)}</div><div><h1>${esc(p.t)}</h1><p><b>${esc(p.a)}</b>${p.y?' · '+esc(p.y):''}</p>${p.tec?`<span class="tag">${esc(p.tec)}</span>`:''}<span class="tag">${esc(p.st)}</span>
+ ${b('Descripción visual',p.vis)}${b('Datos históricos documentados',p.hist)}${b('Interpretaciones posibles',p.int)}${b('Emociones e ideas',p.emo)}
+ <p style="color:var(--mute);font-size:13px">Fuente de la imagen: ${esc(p.src||'Wikimedia Commons (dominio público) · pendiente de enlazar')}</p></div></div>`;hydrate()}
+function form(){const e=edit||{};const v=k=>esc(e[k]);
+ $('#app').innerHTML=`<h1>${edit?'Corregir propuesta':'Proponer una pintura'}</h1><p style="color:var(--mute)">Completa los datos. El administrador revisará tu propuesta antes de publicarla.</p>
+ ${e.feedback?`<div class="warn"><b>Observación del administrador:</b> ${esc(e.feedback)}</div>`:''}
+ <div class="box"><label>Tu nombre</label><input id="f_by" value="${v('contributor_name')}"><label>Título de la obra</label><input id="f_t" value="${v('title')}"><label>Artista</label><input id="f_a" value="${v('artist')}"><label>Año o época</label><input id="f_y" value="${v('year')}"><label>Técnica</label><input id="f_tec" value="${v('technique')}"><label>Estilo</label><input id="f_st" value="${v('style')}">
+ <label>Descripción visual</label><textarea id="f_vis">${v('visual_description')}</textarea><label>Datos históricos documentados (si los conoces)</label><textarea id="f_hist">${v('history')}</textarea><label>Significado o interpretación</label><textarea id="f_int">${v('interpretation')}</textarea><label>Emociones o ideas que transmite</label><textarea id="f_emo">${v('emotions')}</textarea>
+ <label>Fuente y licencia de la imagen (enlace) — obligatorio</label><input id="f_src" value="${v('image_source')}" placeholder="Ej. enlace de Wikimedia Commons y licencia"><label>Imagen (JPG, PNG o WebP, máx. 5 MB)${edit?' — opcional al corregir':''}</label><input type="file" id="f_img" accept="image/jpeg,image/png,image/webp">
+ <div class="row"><button class="btn" id="sb" onclick="send()">${edit?'Volver a enviar':'Enviar propuesta'}</button></div></div>`}
+function resize(f){return new Promise((ok,no)=>{const im=new Image();im.onerror=()=>no(new Error('El archivo no es una imagen válida.'));im.onload=()=>{const k=Math.min(1,1400/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*k;c.height=im.height*k;c.getContext('2d').drawImage(im,0,0,c.width,c.height);c.toBlob(b=>b?ok(b):no(new Error('No se pudo procesar la imagen.')),'image/jpeg',.85)};im.src=URL.createObjectURL(f)})}
+async function send(){const g=k=>$('#f_'+k).value.trim();
+ const o={p_title:g('t'),p_artist:g('a'),p_year:g('y'),p_technique:g('tec'),p_style:g('st'),p_visual:g('vis'),p_history:g('hist'),p_interpretation:g('int'),p_emotions:g('emo'),p_source:g('src')},by=g('by');
+ if(!by||!o.p_title||!o.p_artist||!o.p_visual||!o.p_source)return alert('Completa nombre, título, artista, descripción visual y fuente de la imagen.');
+ const f=$('#f_img').files[0];if(!f&&!edit)return alert('Sube una imagen.');
+ if(f&&(!['image/jpeg','image/png','image/webp'].includes(f.type)||f.size>5e6))return alert('Imagen no válida: usa JPG, PNG o WebP de máximo 5 MB.');
+ const bt=$('#sb');bt.disabled=true;bt.textContent='Enviando…';
+ try{let path=null;if(f){const b=await resize(f);path='uploads/'+crypto.randomUUID()+'.jpg';await api('/storage/v1/object/paintings/'+path,{method:'POST',body:b,h:{'Content-Type':'image/jpeg'}})}
+  if(edit){await api('/rest/v1/rpc/resubmit_painting',{method:'POST',json:{p_code:edit.code,...o,p_image_path:path}});code=edit.code;edit=null}
+  else code=await api('/rest/v1/rpc/submit_painting',{method:'POST',json:{p_name:by,...o,p_image_path:path}});
+  $('#app').innerHTML=`<div class="box"><h1>¡Propuesta enviada!</h1><p>Guarda este código para consultar el estado:</p><h2 style="font-size:36px;color:var(--acc)">${esc(code)}</h2><a class="btn" href="#estado">Ver estado</a></div>`}
+ catch(e){alert('No se pudo enviar: '+e.message);bt.disabled=false;bt.textContent='Enviar propuesta'}}
+async function estado(){let s=null,err='';if(code){try{const r=await api('/rest/v1/rpc/get_submission',{method:'POST',json:{p_code:code}});s=r&&r[0]}catch(e){err=e.message}}cur=s;
+ $('#app').innerHTML=`<h1>Estado de mi propuesta</h1><div class="box"><label>Tu código</label><input id="cd" value="${esc(code)}" placeholder="AV-XXXXXXXX"><div class="row"><button class="btn" onclick="code=$('#cd').value.trim();estado()">Consultar</button></div></div>
+ ${code?(s?`<div class="box"><h3>${esc(s.title)}</h3><span class="st s-${s.status}">${S[s.status]}</span>${s.feedback?`<div class="warn"><b>Observación del administrador:</b> ${esc(s.feedback)}</div>`:''}${s.status==='correcciones'?`<div class="row"><button class="btn" onclick="edit={...cur,code:code.toUpperCase()};location.hash='proponer'">Corregir y reenviar</button></div>`:''}</div>`:`<p>${err?'Error: '+esc(err):'No se encontró ese código.'}</p>`):''}`}
+async function login(){try{const d=await api('/auth/v1/token?grant_type=password',{method:'POST',json:{email:$('#em').value.trim(),password:$('#pw').value}});tok=d.access_token;
+ const r=await api('/rest/v1/admins?select=user_id');if(!r.length){tok=null;return alert('Esta cuenta no es administradora.')}admin()}catch(e){tok=null;alert('No se pudo entrar: '+e.message)}}
+async function admin(){if(!tok){$('#app').innerHTML=`<h1>Panel del administrador</h1><div class="box"><label>Correo</label><input id="em" type="email"><label>Contraseña</label><input type="password" id="pw" onkeydown="if(event.key==='Enter')login()"><div class="row"><button class="btn" onclick="login()">Entrar</button></div></div>`;return}
+ try{A=await api('/rest/v1/paintings?select=*&order=created_at.desc')}catch(e){alert('Sesión vencida. Entra de nuevo.');tok=null;return admin()}
+ const l=A.filter(s=>af==='todas'||s.status===af);
+ $('#app').innerHTML=`<h1>Panel del administrador</h1><div class="chips">${['todas',...Object.keys(S)].map(k=>`<span class="chip ${k===af?'on':''}" onclick="af='${k}';admin()">${k==='todas'?'Todas':S[k]} (${k==='todas'?A.length:A.filter(s=>s.status===k).length})</span>`).join('')}<span class="chip" onclick="tok=null;admin()">Cerrar sesión</span></div>
+ ${l.length?l.map(s=>`<div class="box"><div class="mini"><img data-path="${esc(s.image_path)}" style="width:70px;border-radius:8px"><div><h3 style="color:inherit">${esc(s.title)}</h3><small>${esc(s.artist)} · por ${esc(s.contributor_name)} · código ${esc(s.code)}</small><br><span class="st s-${s.status}">${S[s.status]}</span> ${s.visible?'<span class="tag">Visible</span>':'<span class="tag">Oculta</span>'}${s.approved_at?`<br><small>Aprobada el ${new Date(s.approved_at).toLocaleString('es-CO')} (admin ${esc(String(s.approved_by).slice(0,8))})</small>`:''}</div></div>
+ <p><b>Fuente:</b> ${esc(s.image_source)}</p><p>${esc(s.visual_description)}</p>
+ <label>Editar título</label><input value="${esc(s.title)}" onchange="up('${s.id}',{title:this.value})"><label>Editar artista</label><input value="${esc(s.artist)}" onchange="up('${s.id}',{artist:this.value})"><label>Editar descripción</label><textarea onchange="up('${s.id}',{visual_description:this.value})">${esc(s.visual_description)}</textarea>
+ <label>Nota interna (solo administrador)</label><textarea onchange="up('${s.id}',{private_note:this.value})">${esc(s.private_note)}</textarea><label>Observación para el colaborador (la verá con su código)</label><textarea id="fb${s.id}">${esc(s.feedback)}</textarea>
+ <div class="row"><button class="btn ok" onclick="act('${s.id}','aprobada')">Aprobar y publicar</button><button class="btn" onclick="act('${s.id}','correcciones')">Pedir correcciones</button><button class="btn no" onclick="act('${s.id}','rechazada')">Rechazar</button>${s.status==='aprobada'?`<button class="btn alt" onclick="up('${s.id}',{visible:${!s.visible}},1)">${s.visible?'Ocultar':'Publicar'}</button>`:''}</div></div>`).join(''):'<p>No hay propuestas en esta categoría.</p>'}`;hydrate()}
+async function up(id,f,re){try{await api('/rest/v1/paintings?id=eq.'+id,{method:'PATCH',json:f,h:{Prefer:'return=minimal'}});if(re)admin()}catch(e){alert('No se pudo guardar: '+e.message)}}
+async function act(id,st){const fb=$('#fb'+id).value;if(st==='correcciones'&&!fb.trim())return alert('Escribe la observación para el colaborador.');
+ try{await api('/rest/v1/paintings?id=eq.'+id,{method:'PATCH',json:{status:st,visible:st==='aprobada',feedback:fb},h:{Prefer:'return=minimal'}});admin()}catch(e){alert('No se pudo guardar: '+e.message)}}
+addEventListener('hashchange',route);route();
+</script>
+
+</body>
+</html>
