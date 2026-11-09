@@ -59,40 +59,7 @@ footer{text-align:center;color:var(--mute);font-size:13px;padding:30px 20px}
 <script>
 const U='https://peowgvqyuwkbzrqssocq.supabase.co',K='sb_publishable_C5HB9hOyGucwylpJkn2eCA_9wSy0bHA';
 const S={pendiente:'Pendiente de revisión',correcciones:'Necesita correcciones',aprobada:'Aprobada y publicada',rechazada:'Rechazada'};
-const D=[
-{id:'noche',f:"Van Gogh - Starry Night - Google Art Project.jpg",t:'La noche estrellada',a:'Vincent van Gogh',y:'1889',tec:'Óleo sobre lienzo',st:'Postimpresionismo',c:['#0f2a5c','#2f6db5','#f2c744'],r:1.25,
-vis:'Un cielo nocturno dominado por remolinos de azul, con una luna creciente y estrellas rodeadas de halos amarillos. Abajo, un pueblo tranquilo y un ciprés oscuro que se eleva como una llama.',
-hist:'Van Gogh la pintó en junio de 1889 en el asilo de Saint-Paul-de-Mausole, en Saint-Rémy-de-Provence, Francia, donde estaba internado voluntariamente. Hoy se conserva en el MoMA de Nueva York. El pueblo no corresponde exactamente a la vista real desde su ventana.',
-int:'Algunas lecturas ven en el cielo agitado el estado emocional del artista; otras destacan la búsqueda de lo espiritual en la naturaleza. Son interpretaciones, no hechos documentados.',emo:'Inquietud, asombro, esperanza y soledad.'},
-{id:'gioconda',f:"Mona Lisa, by Leonardo da Vinci, from C2RMF retouched.jpg",t:'La Gioconda (Mona Lisa)',a:'Leonardo da Vinci',y:'c. 1503–1519',tec:'Óleo sobre tabla de álamo',st:'Renacimiento',c:['#3b3a22','#8c7a45','#c9b27a'],r:1.5,
-vis:'Retrato de una mujer sentada, de medio cuerpo, con una leve sonrisa y la mirada hacia el espectador, frente a un paisaje lejano y brumoso.',
-hist:'Se suele identificar a la retratada con Lisa Gherardini, esposa de Francesco del Giocondo, según Giorgio Vasari. Leonardo empleó la técnica del sfumato. La obra se conserva en el Museo del Louvre, París, y fue robada en 1911 y recuperada en 1913.',
-int:'La sonrisa ambigua ha dado lugar a muchas lecturas sobre su significado; ninguna está confirmada.',emo:'Serenidad, misterio y calma.'},
-{id:'tresmayo',f:"El Tres de Mayo, by Francisco de Goya, from Google Art Project.jpg",t:'Los fusilamientos del 3 de mayo',a:'Francisco de Goya',y:'1814',tec:'Óleo sobre lienzo',st:'Romanticismo',c:['#1b1a24','#3a3a4a','#e8d27a'],r:1.1,
-vis:'De noche, un grupo de soldados con fusiles apunta a un hombre de camisa blanca que levanta los brazos, rodeado de otros civiles. Un farol en el suelo ilumina la escena.',
-hist:'Goya la pintó en 1814, tras la salida de las tropas francesas de España. Representa los fusilamientos del 3 de mayo de 1808 en Madrid, que siguieron al levantamiento del día anterior contra la ocupación francesa. Se conserva en el Museo del Prado, Madrid.',
-int:'Suele leerse como una denuncia de la violencia de la guerra y un homenaje a las víctimas. Es una interpretación posible, no un dato documentado.',emo:'Horror, injusticia, miedo y dolor.'},
-{id:'grito',f:"The Scream.jpg",t:'El grito',a:'Edvard Munch',y:'1893',tec:'Temple y crayón sobre cartón',st:'Expresionismo',c:['#c2491d','#e8903a','#1c3a57'],r:1.3,
-vis:'Una figura andrógina con las manos en el rostro sobre un puente, con un cielo ondulante rojo y naranja y un fiordo al fondo.',
-hist:'Munch hizo varias versiones. La de 1893 está en la Galería Nacional de Oslo. En su diario de 1892 describió un paseo al atardecer en el que sintió un grito infinito recorriendo la naturaleza.',
-int:'Muchas lecturas la asocian con la angustia moderna; es una interpretación posterior.',emo:'Angustia, ansiedad y desesperación.'},
-{id:'impresion',f:"Monet - Impression, Sunrise.jpg",t:'Impresión, sol naciente',a:'Claude Monet',y:'1872',tec:'Óleo sobre lienzo',st:'Impresionismo',c:['#6f8ea0','#b9c9cf','#e3672b'],r:0.75,
-vis:'El puerto de Le Havre al amanecer, entre neblina azul y gris, con un sol naranja y barcas difuminadas sobre el agua.',
-hist:'Se expuso en 1874 en la primera exposición del grupo de artistas independientes. La crítica del periodista Louis Leroy usó el título para burlarse, y de ahí viene el nombre «impresionismo». Se conserva en el Museo Marmottan Monet, París.',
-int:'Se interpreta como un intento de captar un instante fugaz de luz más que un lugar exacto.',emo:'Calma, nostalgia y quietud.'},
-{id:'meninas',f:"Las Meninas, by Diego Velázquez, from Google Art Project.jpg",t:'Las Meninas',a:'Diego Velázquez',y:'1656',tec:'Óleo sobre lienzo',st:'Barroco',c:['#2b2118','#6e5236','#c9a96b'],r:1.2,
-vis:'Una sala del Alcázar de Madrid con la infanta Margarita rodeada de sus damas, un pintor ante un gran lienzo y un espejo al fondo que refleja a dos figuras.',
-hist:'Velázquez era pintor de cámara de Felipe IV. La obra está en el Museo del Prado, Madrid. El espejo refleja a los reyes, y el pintor del cuadro se identifica con Velázquez.',
-int:'Se discute qué muestra el lienzo del fondo y quién es el verdadero «espectador». Las lecturas sobre el juego entre realidad y representación son interpretaciones.',emo:'Misterio, intimidad y curiosidad.'},
-{id:'beso',f:"The Kiss - Gustav Klimt - Google Cultural Institute.jpg",t:'El beso',a:'Gustav Klimt',y:'1907–1908',tec:'Óleo y pan de oro sobre lienzo',st:'Simbolismo / Secesión vienesa',c:['#7a5a14','#d9ae3f','#f1dc9a'],r:1.0,
-vis:'Una pareja abrazada sobre un prado de flores, envuelta en mantos dorados con motivos geométricos y florales.',
-hist:'Pertenece al llamado «periodo dorado» de Klimt y se conserva en el Belvedere de Viena. La identidad de las figuras no está documentada con certeza.',
-int:'Suele leerse como una celebración del amor y la unión. Es una interpretación posible.',emo:'Ternura, intimidad y calidez.'},
-{id:'perla',f:"Meisje met de parel.jpg",t:'La joven de la perla',a:'Johannes Vermeer',y:'c. 1665',tec:'Óleo sobre lienzo',st:'Siglo de Oro neerlandés',c:['#0e0e12','#2c4a6b','#d9c38a'],r:1.35,
-vis:'Una joven que mira por encima del hombro, con turbante azul y amarillo y un gran pendiente de perla, sobre fondo oscuro.',
-hist:'Es un «tronie» (estudio de un tipo o expresión), no un retrato encargado. La modelo no se conoce. Está en el Mauritshuis, La Haya.',
-int:'El interés está en la mirada y en la luz de la perla. Cualquier historia sobre la identidad de la joven es especulación.',emo:'Sorpresa suave, intimidad y misterio.'}
-];
+const D=[];
 
 let tok=null,P=[],A=[],code='',edit=null,cur=null,q='',sty='Todos',af='todas';
 const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
@@ -113,10 +80,10 @@ const imgOf=p=>p.path?`<img class="img" data-path="${esc(p.path)}" alt="${esc(p.
 function route(){const r=location.hash.slice(1)||'galeria';document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('on',r.startsWith(a.dataset.r)));
  ({galeria:gal,proponer:form,estado:estado,admin:admin}[r]||(r.startsWith('obra-')?()=>detail(r.slice(5)):gal))();window.scrollTo(0,0)}
 async function gal(){$('#app').innerHTML='<p>Cargando galería…</p>';await loadPub();const st=['Todos',...new Set(pub().map(p=>p.st))];
- $('#app').innerHTML=`<div class="hero2"><div class="orb" style="width:300px;height:300px;background:var(--acc);left:5%;top:0"></div><div class="orb" style="width:260px;height:260px;background:var(--gold);right:5%;top:40px"></div><div class="kick">Galería digital de pinturas</div><h1>Mira el arte<br>de otra manera</h1><p>Explora cuadros célebres, descubre la historia detrás de cada pincelada y propón tus propias obras.</p><a class="btn" href="#g" onclick="document.getElementById('g').scrollIntoView({behavior:'smooth'});return false">Explorar obras</a> <a class="btn alt" href="#proponer">Proponer una obra</a><div class="stats"><div><b>${pub().length}</b>obras</div><div><b>${st.length-1}</b>estilos</div><div><b>${new Set(pub().map(p=>p.a)).size}</b>artistas</div></div></div>
- <input id="q" placeholder="Buscar por título o artista…" value="${esc(q)}" oninput="q=this.value;grid()"><div class="chips">${st.map(s=>`<span class="chip ${s===sty?'on':''}" onclick="sty=this.textContent;gal()">${esc(s)}</span>`).join('')}</div><div class="grid" id="g"></div>`;grid()}
+ $('#app').innerHTML=`<div class="hero2"><div class="orb" style="width:300px;height:300px;background:var(--acc);left:5%;top:0"></div><div class="orb" style="width:260px;height:260px;background:var(--gold);right:5%;top:40px"></div><div class="kick">Galería digital de pinturas</div><h1>Mira el arte<br>de otra manera</h1><p>Descubre las pinturas creadas en nuestro colegio y propón la tuya.</p><a class="btn" href="#g" onclick="document.getElementById('g').scrollIntoView({behavior:'smooth'});return false">Explorar obras</a> <a class="btn alt" href="#proponer">Proponer una obra</a><div class="stats"><div><b>${pub().length}</b>obras</div><div><b>${new Set(pub().map(p=>p.a)).size}</b>artistas</div></div></div>
+ <input id="q" placeholder="Buscar por título o artista…" value="${esc(q)}" oninput="q=this.value;grid()"><div class="chips">${st.length<3?'':st.map(s=>`<span class="chip ${s===sty?'on':''}" onclick="sty=this.textContent;gal()">${esc(s)}</span>`).join('')}</div><div class="grid" id="g"></div>`;grid()}
 function grid(){const t=q.toLowerCase(),l=pub().filter(p=>(sty==='Todos'||p.st===sty)&&(p.t+' '+p.a).toLowerCase().includes(t));
- $('#g').innerHTML=l.length?l.map((p,i)=>`<a class="card" style="animation:in .6s both ${i*70}ms" href="#obra-${p.id}"><div class="ph">${imgOf(p)}<div class="ov">Ver historia →</div></div><div class="t"><h3>${esc(p.t)}</h3><small>${esc(p.a)}${p.y?' · '+esc(p.y):''}</small></div></a>`).join(''):'<p>No hay obras con esa búsqueda.</p>';hydrate()}
+ $('#g').innerHTML=l.length?l.map((p,i)=>`<a class="card" style="animation:in .6s both ${i*70}ms" href="#obra-${p.id}"><div class="ph">${imgOf(p)}<div class="ov">Ver historia →</div></div><div class="t"><h3>${esc(p.t)}</h3><small>${esc(p.a)}${p.y?' · '+esc(p.y):''}</small></div></a>`).join(''):pub().length?'<p>No hay obras con esa búsqueda.</p>':'<div class="box"><h3>Aún no hay obras publicadas</h3>Sé el primero en proponer una pintura del colegio.<div class="row"><a class="btn" href="#proponer">Proponer una obra</a></div></div>';hydrate()}
 async function detail(id){if(!P.length)await loadPub();const p=pub().find(x=>x.id===id);if(!p){$('#app').innerHTML='<p>Obra no encontrada. <a href="#galeria">Volver</a></p>';return}
  const b=(h,v)=>v?`<div class="box"><h3>${h}</h3>${esc(v)}</div>`:'';
  $('#app').innerHTML=`<a href="#galeria" class="btn alt">← Volver</a><div class="det" style="margin-top:18px"><div>${imgOf(p)}</div><div><h1>${esc(p.t)}</h1><p><b>${esc(p.a)}</b>${p.y?' · '+esc(p.y):''}</p>${p.tec?`<span class="tag">${esc(p.tec)}</span>`:''}<span class="tag">${esc(p.st)}</span>
